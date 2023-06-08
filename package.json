@@ -1,0 +1,46 @@
+{
+	"name": "perses-figma-plugin",
+	"version": "1.0.0",
+	"description": "Figma plugin for Perses embedded panels and charts",
+	"scripts": {
+		"build": "webpack --mode=production",
+		"build:watch": "webpack --mode=development --watch",
+		"prettier:format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,json}' "
+	},
+	"dependencies": {
+		"@perses-dev/panels-plugin": "^0.2.0",
+		"echarts": "^5.3.1",
+		"lodash.debounce": "^4.0.8",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"time-series-data-generator": "^0.1.5"
+	},
+	"devDependencies": {
+		"@figma/plugin-typings": "^1.24.0",
+		"@types/react": "^17.0.11",
+		"@types/react-dom": "^17.0.7",
+		"css-loader": "^5.0.1",
+		"html-webpack-inline-source-plugin": "^0.0.10",
+		"html-webpack-plugin": "^3.2.0",
+		"husky": "^4.3.0",
+		"lint-staged": "^10.5.1",
+		"prettier": "^2.3.1",
+		"style-loader": "^2.0.0",
+		"ts-loader": "^8.0.11",
+		"typescript": "^4.1.2",
+		"url-loader": "^4.1.1",
+		"webpack": "^4.41.4",
+		"webpack-cli": "^3.3.6"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"src/**/*.{js,jsx,ts,tsx,css,json}": [
+			"prettier --write",
+			"git add"
+		]
+	}
+}
